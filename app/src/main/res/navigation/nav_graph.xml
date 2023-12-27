@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.dnevnik.ui.fragments.main.MainFragment"
+        android:label="Главная"
+        tools:layout="@layout/fragment_main" />
+    <fragment
+        android:id="@+id/scheduleFragment"
+        android:name="com.example.dnevnik.ui.fragments.schedule.ScheduleFragment"
+        android:label="Расписание"
+        tools:layout="@layout/fragment_schedule" />
+    <fragment
+        android:id="@+id/visitFragment"
+        android:name="com.example.dnevnik.ui.fragments.visit.VisitFragment"
+        android:label="Посещение"
+        tools:layout="@layout/fragment_visit" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.dnevnik.ui.fragments.profile.ProfileFragment"
+        android:label="Профиль"
+        tools:layout="@layout/fragment_profile" />
+</navigation>
