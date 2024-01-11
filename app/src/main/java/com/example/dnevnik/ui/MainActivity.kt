@@ -10,7 +10,11 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.dnevnik.R
 import com.example.dnevnik.databinding.ActivityMainBinding
+import com.example.ejournal.tools.viewVisibility
+import dagger.hilt.android.AndroidEntryPoint
 
+
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
@@ -41,6 +45,17 @@ class MainActivity : AppCompatActivity() {
                 R.id.profileFragment,
             )
         )
+
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+
+            if (destination.id == R.id.loginFragment) {
+                supportActionBar?.hide()
+                binding.navView.viewVisibility(false)
+            } else {
+                supportActionBar?.show()
+                binding.navView.viewVisibility(true)
+            }
+        }
 
         setupActionBarWithNavController(navController, appBarConfiguration)
         binding.navView.setupWithNavController(navController)

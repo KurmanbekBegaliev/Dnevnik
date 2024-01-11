@@ -1,6 +1,8 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    kotlin("kapt")
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -60,5 +62,23 @@ dependencies {
     implementation("de.hdodenhof:circleimageview:3.1.0")
     // Picasso
     implementation("com.squareup.picasso:picasso:2.8")
+
+    // Hilt
+    implementation("com.google.dagger:hilt-android:2.48")
+    kapt("com.google.dagger:hilt-android-compiler:2.48")
+    kapt("org.jetbrains.kotlinx:kotlinx-metadata-jvm:0.5.0")
+
+    // OkHttp
+    implementation(platform("com.squareup.okhttp3:okhttp-bom:4.11.0"))
+    implementation("com.squareup.okhttp3:okhttp")
+
+    // LoggingInterceptor
+    implementation("com.squareup.okhttp3:logging-interceptor")
+
+    // Retrofit
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+
+    // GSonConverter
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
 
 }

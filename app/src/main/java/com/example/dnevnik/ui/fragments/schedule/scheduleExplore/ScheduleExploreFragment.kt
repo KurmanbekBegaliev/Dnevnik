@@ -10,8 +10,9 @@ import com.example.dnevnik.R
 import com.example.dnevnik.base.BaseFragment
 import com.example.dnevnik.databinding.FragmentScheduleExploreBinding
 import com.example.dnevnik.ui.fragments.schedule.adapters.ScheduleExploreAdapter
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class ScheduleExploreFragment :
     BaseFragment<FragmentScheduleExploreBinding, ScheduleExploreViewModel>() {
     override fun getViewBinding(): FragmentScheduleExploreBinding =

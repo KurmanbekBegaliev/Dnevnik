@@ -6,7 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.dnevnik.R
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class VisitFragment : Fragment() {
 
     override fun onCreateView(
