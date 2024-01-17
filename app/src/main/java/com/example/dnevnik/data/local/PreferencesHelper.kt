@@ -10,4 +10,8 @@ class PreferencesHelper @Inject constructor(context: Context){
     var isLoginSuccess: Boolean
         set(value) = sharedPreferences.edit().putBoolean("LOGIN_KEY", value).apply()
         get() = sharedPreferences.getBoolean("LOGIN_KEY", false)
+
+    var userId: Int
+        set(value) = sharedPreferences.edit().putInt("USER_ID", value).apply()
+        get() = sharedPreferences.getInt("USER_ID", 0)
 }

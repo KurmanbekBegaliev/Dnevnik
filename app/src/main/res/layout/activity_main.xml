@@ -11,7 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         app:titleCentered="true"
-        android:background="@color/light_gray"
+        android:background="@color/lavender"
+        app:titleTextColor="@color/white"
         style="@style/CustomToolbarStyle"
         app:layout_constraintTop_toTopOf="parent"/>
 

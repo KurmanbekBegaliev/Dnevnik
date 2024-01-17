@@ -27,10 +27,6 @@ class LoginFragment : BaseFragment<FragmentLoginBinding, LoginViewModel>() {
 
     override fun initialize() {
 
-        if (preferences.isLoginSuccess) {
-            findNavController().navigate(R.id.mainFragment)
-        }
-
         binding.btnLogin.setOnClickListener {
             lifecycleScope.launch {
                 repeatOnLifecycle(Lifecycle.State.STARTED) {
@@ -60,6 +56,7 @@ class LoginFragment : BaseFragment<FragmentLoginBinding, LoginViewModel>() {
         for(i in pupils) {
             if (i.login == login && i.password == password) {
                 isTrue = true
+                preferences.userId = i.id.toString().toInt()
             }
         }
 

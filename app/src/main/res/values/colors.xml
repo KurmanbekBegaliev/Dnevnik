@@ -8,4 +8,5 @@
     <color name="dark_gray">#ACABAD</color>
     <color name="darkest_gray">#979797</color>
     <color name="light_black">#1F1F1F</color>
+    <color name="red">#FD6565</color>
 </resources>

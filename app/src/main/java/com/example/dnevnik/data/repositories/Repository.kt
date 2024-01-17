@@ -19,4 +19,15 @@ class Repository @Inject constructor(
         }
 
     }
+
+    suspend fun getNews() = flow {
+        emit(UiState.Loading())
+        val response = apiService.getNews()
+        if (response.isSuccessful) {
+            emit(UiState.Success(response.body()))
+        } else {
+            emit(UiState.Error(response.message()))
+        }
+
+    }
 }

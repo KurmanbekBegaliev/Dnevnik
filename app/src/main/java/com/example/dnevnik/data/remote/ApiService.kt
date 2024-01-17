@@ -1,5 +1,6 @@
 package com.example.ejournal.data.remote
 
+import com.example.dnevnik.data.models.News
 import com.example.dnevnik.data.models.Pupils
 import com.example.ejournal.data.models.Teachers
 import retrofit2.Response
@@ -9,4 +10,7 @@ interface ApiService {
 
     @GET("add/okuuchu/")
     suspend fun getTeachers(): Response<Pupils>
+
+    @GET("add/news/")
+    suspend fun  getNews(): Response<News>
 }

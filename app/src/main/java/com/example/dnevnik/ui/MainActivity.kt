@@ -10,6 +10,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.dnevnik.R
 import com.example.dnevnik.databinding.ActivityMainBinding
+import com.example.ejournal.data.local.PreferencesHelper
 import com.example.ejournal.tools.viewVisibility
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -20,6 +21,10 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var navController: NavController
+
+    private val preferences: PreferencesHelper by lazy {
+        PreferencesHelper(this)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,6 +38,10 @@ class MainActivity : AppCompatActivity() {
 
         setSupportActionBar(binding.mainToolbar)
         setupBar()
+
+        if (!preferences.isLoginSuccess) {
+            navController.navigate(R.id.loginFragment)
+        }
 
     }
 

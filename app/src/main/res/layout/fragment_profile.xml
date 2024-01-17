@@ -1,64 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/light_gray"
     tools:context=".ui.fragments.profile.ProfileFragment">
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/img_user_avatar"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:src="@drawable/ic_default_photo"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+    <FrameLayout
+        android:id="@+id/img_container"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:background="@color/lavender"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintVertical_bias="0.2"/>
+        tools:layout_editor_absoluteX="0dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/img_user_avatar"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_default_photo" />
+
+    </FrameLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="Ф.И.О"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/tv_user_fio"
+        app:layout_constraintEnd_toStartOf="@id/tv_user_fio"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_user_fio" />
 
     <TextView
         android:id="@+id/tv_user_fio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="Шерматов Самат"
-        android:textStyle="bold"
-        android:textSize="20sp"
-        android:gravity="center"
-        android:textColor="@color/light_black"
+        android:layout_marginEnd="16dp"
+        android:gravity="end"
         android:maxWidth="300dp"
-        app:layout_constraintTop_toBottomOf="@id/img_user_avatar"
+        tools:text="Шерматов Самат"
+        android:textColor="@color/light_black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/img_container" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="Номер"
+        android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toTopOf="@id/tv_user_number" />
 
     <TextView
         android:id="@+id/tv_user_number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="0700276475"
-        android:textStyle="bold"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="end"
+        tools:text="0700276475"
         android:textSize="18sp"
-        android:gravity="center"
-        android:maxWidth="300dp"
-        app:layout_constraintTop_toBottomOf="@id/tv_user_fio"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_user_fio" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="Эл. почта"
+        android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toTopOf="@id/tv_user_email" />
 
     <TextView
         android:id="@+id/tv_user_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="16dp"
-        android:text="sultanbekabdykadyrov69@gmail.com"
-        android:textStyle="bold"
-        android:layout_marginTop="8dp"
+        android:maxWidth="240dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="end"
+        tools:text="sultanbekabdykadyrov69@gmail.com"
         android:textSize="18sp"
-        android:gravity="center"
-        app:layout_constraintTop_toBottomOf="@id/tv_user_number"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_user_number" />
+
+    <TextView
+        android:id="@+id/btn_logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="36dp"
+        android:text="Выйти"
+        android:textColor="@color/red"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
